@@ -22,7 +22,7 @@ jobs:
           MESSAGE: "This is a message from local action"
         # 3. Use a custom action from another repo
       - name: Run my custom action
-        uses: basivireddy1212/github-actions-common/.github/actions/hello-world@main
+        uses: basivireddy1212/github-actions-common/hello-world@main
         with:
             MESSAGE: "This is a message from main workflow"
 
