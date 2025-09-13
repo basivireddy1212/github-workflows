@@ -18,7 +18,7 @@ jobs:
 
       # 3. Use a custom action from another repo
       - name: Run my custom action
-        uses: github.com/basivireddy/github-actions-common/.github/actions/hello-world@main
+        uses: github.com/basivireddy1212/github-actions-common/.github/actions/hello-world@main
         with:
             MESSAGE: "This is a message from main workflow"
 
