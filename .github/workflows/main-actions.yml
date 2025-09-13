@@ -1,0 +1,28 @@
+name: Workflow calling custom action
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Checkout repo (official action)
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Run a simple command
+      - name: List files
+        run: ls -la
+
+      # 3. Use a custom action from another repo
+      - name: Run my custom action
+        uses: github.com/basivireddy/github-actions-common/.github/actions/hello-world@main
+        with:
+            MESSAGE: "This is a message from main workflow"
+
+      - name: Run local action
+        uses: ./.github/workflows/actions/hello-world
+        with:
+          MESSAGE: "This is a message from local action"
