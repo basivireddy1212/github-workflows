@@ -12,6 +12,12 @@ jobs:
       environment: "production"
     secrets:
       MY_SECRET: ${{ secrets.MY_SECRET }}
+  call-remote-reusable:
+    uses: basivireddy1212/python-pytest-api-testing/.github/workflows/main.yml@main
+    with:
+      environment: "staging"
+      run-tests: "true"
+
 
 # call-actions:
 #    runs-on: ubuntu-latest
