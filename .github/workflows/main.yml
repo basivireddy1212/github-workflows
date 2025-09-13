@@ -12,3 +12,7 @@ jobs:
       environment: "production"
     secrets:
       MY_SECRET: ${{ secrets.MY_SECRET }}
+ call-actions:
+    uses: github.com/basivireddy/github-actions-common/.github/actions/hello-world@main
+    with:
+      MESSAGE: "This is a message from main workflow"
