@@ -1,0 +1,18 @@
+name: 'stale branch'
+description: 'Add a git tag to the current workflow commit'
+author: 'basivireddy'
+inputs:
+  repo_name:
+     type: string
+     description: repo
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v3
+      with:
+        repository: "basivireddy/${{ inputs.repo_name }}"
+        path: "${{ inputs.repo_name }}"
+        
+    - run: bash ./.github/workflows/actions/stale/s-b.sh "${{ inputs.repo_name }}" > stale-barnches-${{ inputs.repo_name }}.csv
+      shell: bash
+      
